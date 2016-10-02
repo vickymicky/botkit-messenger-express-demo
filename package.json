@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.1",
-    "botkit": "^0.2.2",
+    "botkit": "https://github.com/howdyai/botkit.git#master",
     "dotenv": "^2.0.0",
     "ejs": "^2.4.2",
     "express": "^4.13.4",
