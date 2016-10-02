@@ -13,11 +13,12 @@ hellorestservice.prototype.getResponse = function(userId) {
     //         }
     //     }
     // )
-    
+
     var reply = new quickreply(userId, "Are you fine ?")
     reply.addQuickReply("text", "yes", "I am fine")
     reply.addQuickReply("text", "no", "I am not fine")
     return reply.getJSON()
 }
+
 
 module.exports = hellorestservice

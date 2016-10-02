@@ -42,6 +42,26 @@ request.post('https://graph.facebook.com/me/subscribed_apps?access_token=' + pro
     }
 )
 
+request({
+        method: "POST",
+        json: true,
+        headers: {
+            "content-type": "application/json",
+        },
+        body: {
+            "setting_type": "domain_whitelisting",
+            "whitelisted_domains": ["https://bbot.localtunnel.me"],
+            "domain_action_type": "add"
+        },
+        uri: 'https://graph.facebook.com/v2.6/me/thread_settings?access_token=' + process.env.FACEBOOK_PAGE_TOKEN,
+    },
+    function(error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        }
+    }
+)
+
 // this is triggered when a user clicks the send-to-messenger plugin
 controller.on('facebook_optin', function(bot, message) {
     bot.reply(message, 'Welcome, friend')

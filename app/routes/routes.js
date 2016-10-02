@@ -9,6 +9,14 @@ module.exports = function (app) {
     res.render('home')
   })
 
+  app.get('/sampleview', function (req, res) {
+    res.render('webview')
+  })
+
+  app.get('/sampledata', function (req, res) {
+    console.log(req.query)
+  })
+
   app.get('/webhook', function (req, res) {
     // This enables subscription to the webhooks
     if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === process.env.FACEBOOK_VERIFY_TOKEN) {

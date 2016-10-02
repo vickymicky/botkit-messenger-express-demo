@@ -5,13 +5,13 @@
 ## Additional Features
 
 * Added plugins loader to modularise all the conversations into separate plugins, refer 
-1. app/controllers/botkit.js => loadPlugins()
+	1. app/controllers/botkit.js => loadPlugins()
 
 * Added service object pattern, refer 
-1. app/services/helloservice.js 
-2. app/services/hellorestservice.js 
+	1. app/services/helloservice.js 
+	2. app/services/hellorestservice.js 
 
 * Added view object pattern, refer
-1. app/templates/fb/quickreply.js 
+	1. app/templates/fb/quickreply.js 
 
 * Made express app object to glbal scope

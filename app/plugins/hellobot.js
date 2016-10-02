@@ -3,21 +3,23 @@ var hellorestservice = require('../services/hellorestservice')
 
 
 var hellobot = function(controller, bot, app) {
+
+    var hellorestserviceObj = new hellorestservice()
     // user said hi
     controller.hears(['hi'], 'message_received', function(bot, message) {
         //'Hi, How are you. ' + app.locals.appName 
-        
-        var replyFromViewObject = new hellorestservice().getResponse(message.user)
-        // var reply_message = {
-        //     sender_action: "typing_on"
-        // }
+
+        var replyFromViewObject = hellorestserviceObj.getResponse(message.user)
+            // var reply_message = {
+            //     sender_action: "typing_on"
+            // }
 
         // bot.reply(message, reply_message)
 
         bot.reply(message, replyFromViewObject)
     })
 
-    controller.hears('test', 'message_received', function(bot, message) {
+    controller.hears('test postback', 'message_received', function(bot, message) {
 
         var attachment = {
             'type': 'template',
@@ -31,6 +33,32 @@ var hellobot = function(controller, bot, app) {
                         'type': 'postback',
                         'title': 'Eat Cookie',
                         'payload': 'chocolate'
+                    }]
+                }, ]
+            }
+        }
+
+        bot.reply(message, {
+            attachment: attachment,
+        })
+
+    })
+
+    controller.hears('test webview', 'message_received', function(bot, message) {
+
+        var attachment = {
+            'type': 'template',
+            'payload': {
+                'template_type': 'generic',
+                'elements': [{
+                    'title': 'Test Webview',
+                    'buttons': [{
+                        "type": "web_url",
+                        "url": "https://bbot.localtunnel.me/sampleview",
+                        "title": "Select Criteria",
+                        "webview_height_ratio": "compact",
+                        "messenger_extensions": true,
+                        "fallback_url": "https://bbot.localtunnel.me"
                     }]
                 }, ]
             }
