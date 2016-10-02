@@ -15,3 +15,6 @@
 	1. app/templates/fb/quickreply.js 
 
 * Made express app object to glbal scope
+
+* Added multi-language sample, refer
+	1. app/plugins/hellobot.js
