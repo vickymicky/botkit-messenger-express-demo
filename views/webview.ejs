@@ -37,8 +37,15 @@
 
         });
     };
+    function closeView(){
+        MessengerExtensions.requestCloseBrowser(function success() {
+            console.log(success)
+      }, function error(err) {
+        console.log(err)
+      });
+    }
     </script>
     <center>
-        <a id="samplelink" href="#" class="btn btn-info" role="button">Link Button</a>
+        <a id="samplelink" href="#" class="btn btn-info" role="button" onclick="closeView()">Link Button</a>
     </center>
 </body>

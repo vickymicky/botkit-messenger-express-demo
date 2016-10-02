@@ -16,6 +16,7 @@
     "express": "^4.13.4",
     "generate-function": "^2.0.0",
     "generate-object-property": "^1.2.0",
+    "i18n": "^0.8.3",
     "jsonpointer": "^4.0.0",
     "mongodb": "^2.1.20",
     "monkii": "^1.2.0",

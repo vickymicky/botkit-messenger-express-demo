@@ -19,6 +19,13 @@ var hellobot = function(controller, bot, app) {
         bot.reply(message, replyFromViewObject)
     })
 
+    controller.hears(['hello i18n'], 'message_received', function(bot, message) {
+        bot.reply(message, 'I will reply in tamil')
+        i18n.setLocale('ta')
+        var i18nMsg =  i18n.__('Hello i18n')
+        bot.reply(message, i18nMsg)
+    })
+
     controller.hears('test postback', 'message_received', function(bot, message) {
 
         var attachment = {

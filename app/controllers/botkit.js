@@ -68,7 +68,7 @@ controller.on('facebook_optin', function(bot, message) {
 })
 
 // user said hello
-controller.hears(['hello'], 'message_received', function(bot, message) {
+controller.hears(['helo'], 'message_received', function(bot, message) {
     bot.reply(message, 'Hey there.')
 })
 
@@ -113,8 +113,10 @@ var handler = function(obj) {
                 var facebook_message = obj.entry[e].messaging[m]
 
                 console.log(facebook_message)
-
-                // normal message
+                bot.say({
+                        text: 'my message text'
+                    })
+                    // normal message
                 if (facebook_message.message) {
                     message = {
                         text: facebook_message.message.text,
